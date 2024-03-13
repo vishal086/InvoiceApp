@@ -202,44 +202,12 @@ class InvoiceForm extends React.Component {
             <Form.Label className="fw-bold">Notes:</Form.Label>
             <Form.Control placeholder="Thank you for doing business with us!" name="notes" value={this.state.notes} onChange={(event) => this.editField(event)} as="textarea" className="my-2" rows={1}/>
           </Card>
-        </Col>
         <Col md={4} lg={3}>
-          <div className="sticky-top pt-md-3 pt-xl-4">
-            <Button variant="primary" type="submit" className="d-block w-100 btn-secondary">Review Invoice</Button>
-            <InvoiceModal showModal={this.state.isOpen} closeModal={this.closeModal} info={this.state} items={this.state.items} currency={this.state.currency} subTotal={this.state.subTotal} taxAmmount={this.state.taxAmmount} discountAmmount={this.state.discountAmmount} total={this.state.total}/>
-            <Form.Group className="mb-3">
-              <Form.Label className="fw-bold">Currency:</Form.Label>
-              <Form.Select onChange={event => this.onCurrencyChange({currency: event.target.value})} className="btn btn-light my-1" aria-label="Change Currency">
-                <option value="$">USD (United States Dollar)</option>
-                <option value="£">GBP (British Pound Sterling)</option>
-                <option value="₹">INR (Indian Rupee)</option>
-                <option value="¥">JPY (Japanese Yen)</option>
-                <option value="$">CAD (Canadian Dollar)</option>
-                <option value="$">AUD (Australian Dollar)</option>
-                <option value="$">SGD (Signapore Dollar)</option>
-                <option value="¥">CNY (Chinese Renminbi)</option>
-                <option value="₿">BTC (Bitcoin)</option>
-              </Form.Select>
-            </Form.Group>
-            <Form.Group className="my-3">
-              <Form.Label className="fw-bold">Tax rate:</Form.Label>
-              <InputGroup className="my-1 flex-nowrap">
-                <Form.Control name="taxRate" type="number" value={this.state.taxRate} onChange={(event) => this.editField(event)} className="bg-white border" placeholder="0.0" min="0.00" step="0.01" max="100.00"/>
-                <InputGroup.Text className="bg-light fw-bold text-secondary small">
-                  %
-                </InputGroup.Text>
-              </InputGroup>
-            </Form.Group>
-            <Form.Group className="my-3">
-              <Form.Label className="fw-bold">Discount rate:</Form.Label>
-              <InputGroup className="my-1 flex-nowrap">
-                <Form.Control name="discountRate" type="number" value={this.state.discountRate} onChange={(event) => this.editField(event)} className="bg-white border" placeholder="0.0" min="0.00" step="0.01" max="100.00"/>
-                <InputGroup.Text className="bg-light fw-bold text-secondary small">
-                  %
-                </InputGroup.Text>
-              </InputGroup>
-            </Form.Group>
+          <div className="sticky-top pt-md-3 pt-xl-4 text-center">
+            <Button variant="primary" type="submit" className="btn-secondary w-100">Review Invoice</Button>
+            <InvoiceModal showModal={this.state.isOpen} closeModal={this.closeModal} info={this.state} items={this.state.items} currency={this.state.currency} subTotal={this.state.subTotal} taxAmmount={this.state.taxAmmount} discountAmmount={this.state.discountAmmount} total={this.state.total}/>  
           </div>
+        </Col>
         </Col>
       </Row>
     </Form>)
